@@ -24,7 +24,7 @@ overflow: hidden;
 
 }
 
-/* CARD */
+
 
 .card {
 width: min(90%, 500px);
@@ -50,7 +50,7 @@ animation: cardIn 0.8s ease;
 
 }
 
-/* IMAGE */
+
 
 .main-gif {
 width: 240px;
@@ -64,7 +64,7 @@ margin: 0 auto 20px;
 
 }
 
-/* TEXT */
+
 
 .small-text {
 color: #999;
@@ -96,7 +96,7 @@ margin-bottom: 25px;
 
 }
 
-/* BUTTONS */
+
 
 .buttons {
 display: flex;
@@ -125,7 +125,7 @@ transition:
 
 }
 
-/* YES */
+
 
 #yes {
 background: linear-gradient(135deg, #ff4d6d, #ff758f);
@@ -147,7 +147,7 @@ box-shadow:
 
 }
 
-/* NO */
+
 
 #no {
 background: #eeeeee;
@@ -161,7 +161,7 @@ color: #555;
 background: #e2e2e2;
 }
 
-/* INSTAGRAM */
+
 
 #instagram {
 background: linear-gradient(
@@ -190,7 +190,7 @@ box-shadow:
 
 }
 
-/* RESULT */
+
 
 #result {
 display: none;
@@ -215,7 +215,7 @@ font-style: italic;
 
 }
 
-/* FLOATING HEARTS */
+
 
 .hearts {
 position: fixed;
@@ -275,7 +275,7 @@ left: 90%;
 animation-delay: 5s;
 }
 
-/* ANIMATIONS */
+
 
 @keyframes floatUp {
 
@@ -324,7 +324,7 @@ to {
 
 }
 
-/* MOBILE */
+
 
 @media (max-width: 500px) {
 
