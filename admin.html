@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h1 { color: #ff4d6d; }
-    </style>
+    <title>Date Stats</title>
 </head>
+
 <body>
 
-<h1>📊 Valentine Stats</h1>
+    <h1>❤️ Date Stats</h1>
 
-<p><strong>YES:</strong> <span id="yesCount">0</span></p>
-<p><strong>NO:</strong> <span id="noCount">0</span></p>
+    <p>YES: <span id="yes">0</span></p>
 
-<button onclick="resetStats()">Reset</button>
+    <p>NO: <span id="no">0</span></p>
 
-<script>
-    function loadStats() {
-        document.getElementById("yesCount").innerText =
-            localStorage.getItem("yesCount") || 0;
+    <p>TOTAL: <span id="total">0</span></p>
 
-        document.getElementById("noCount").innerText =
-            localStorage.getItem("noCount") || 0;
-    }
+    <button onclick="loadStats()">
+        Refresh
+    </button>
 
-    function resetStats() {
-        localStorage.setItem("yesCount", 0);
-        localStorage.setItem("noCount", 0);
+
+    <script>
+
+        const SHEET_URL =
+            "https://script.google.com/macros/s/AKfycbz1zREmzSbmRfcYNqyDA7DvU6uRxN_um1D_NsP3_GFiIMGNljA-aV4PQ74F4Dq0wJUQ/exec";
+
+
+        function loadStats() {
+
+            fetch(SHEET_URL)
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    document.getElementById("yes")
+                        .innerText = data.yes;
+
+                    document.getElementById("no")
+                        .innerText = data.no;
+
+                    document.getElementById("total")
+                        .innerText = data.total;
+
+                });
+
+        }
+
+
         loadStats();
-    }
 
-    loadStats();
-</script>
+    </script>
 
 </body>
+
 </html>
