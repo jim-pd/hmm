@@ -6,13 +6,10 @@ const result = document.getElementById("result");
 
 let yesScale = 1;
 
-
-// Google Sheet URL
 const SHEET_URL =
     "https://script.google.com/macros/s/AKfycbz1zREmzSbmRfcYNqyDA7DvU6uRxN_um1D_NsP3_GFiIMGNljA-aV4PQ74F4Dq0wJUQ/exec";
 
 
-// Send answer to Google Sheet
 function sendAnswer(answer) {
 
     fetch(SHEET_URL, {
@@ -21,19 +18,17 @@ function sendAnswer(answer) {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: "answer=" + encodeURIComponent(answer)
+        body: "answer=" + answer
     });
 
 }
 
 
-// NO BUTTON
+// NO
 noButton.addEventListener("click", function () {
 
-    // Send NO to Google Sheet
     sendAnswer("NO");
 
-    // Make YES button bigger
     yesScale += 0.35;
 
     yesButton.style.transform =
@@ -42,16 +37,13 @@ noButton.addEventListener("click", function () {
 });
 
 
-// YES BUTTON
+// YES
 yesButton.addEventListener("click", function () {
 
-    // Send YES to Google Sheet
     sendAnswer("YES");
 
-    // Hide question
     question.style.display = "none";
 
-    // Show result
     result.style.display = "block";
 
 });
