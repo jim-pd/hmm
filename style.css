@@ -1,0 +1,349 @@
+{
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+min-height: 100vh;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+font-family: Arial, sans-serif;
+
+background:
+    radial-gradient(circle at top left, #ffd6e0, transparent 40%),
+    radial-gradient(circle at bottom right, #ffc2d1, transparent 40%),
+    linear-gradient(135deg, #fff0f3, #ffe5ec);
+
+color: #333;
+
+overflow: hidden;
+
+
+}
+
+/* CARD */
+
+.card {
+width: min(90%, 500px);
+
+padding: 35px 25px;
+
+text-align: center;
+
+background: rgba(255, 255, 255, 0.88);
+
+border-radius: 25px;
+
+box-shadow:
+    0 20px 50px rgba(180, 70, 100, 0.18);
+
+backdrop-filter: blur(10px);
+
+position: relative;
+z-index: 2;
+
+animation: cardIn 0.8s ease;
+
+
+}
+
+/* IMAGE */
+
+.main-gif {
+width: 240px;
+max-width: 80%;
+
+border-radius: 20px;
+
+display: block;
+margin: 0 auto 20px;
+
+
+}
+
+/* TEXT */
+
+.small-text {
+color: #999;
+font-size: 14px;
+
+margin-bottom: 8px;
+
+
+}
+
+h1 {
+color: #ff4d6d;
+
+font-size: 28px;
+
+margin: 15px 0 25px;
+
+
+}
+
+.message {
+font-size: 17px;
+line-height: 1.6;
+
+color: #555;
+
+margin-bottom: 25px;
+
+
+}
+
+/* BUTTONS */
+
+.buttons {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+button {
+border: none;
+
+padding: 13px 25px;
+
+border-radius: 50px;
+
+font-size: 17px;
+font-weight: bold;
+
+cursor: pointer;
+
+transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+
+}
+
+/* YES */
+
+#yes {
+background: linear-gradient(135deg, #ff4d6d, #ff758f);
+
+color: white;
+
+box-shadow:
+    0 8px 20px rgba(255, 77, 109, 0.3);
+
+
+}
+
+#yes:hover {
+transform: scale(1.08);
+
+box-shadow:
+    0 10px 25px rgba(255, 77, 109, 0.4);
+
+
+}
+
+/* NO */
+
+#no {
+background: #eeeeee;
+
+color: #555;
+
+
+}
+
+#no:hover {
+background: #e2e2e2;
+}
+
+/* INSTAGRAM */
+
+#instagram {
+background: linear-gradient(
+135deg,
+#833ab4,
+#fd1d1d,
+#fcb045
+);
+
+color: white;
+
+padding: 14px 28px;
+
+box-shadow:
+    0 8px 20px rgba(225, 48, 108, 0.25);
+
+
+}
+
+#instagram:hover {
+transform: scale(1.08);
+
+box-shadow:
+    0 12px 28px rgba(225, 48, 108, 0.35);
+
+
+}
+
+/* RESULT */
+
+#result {
+display: none;
+}
+
+.success {
+font-size: 35px;
+
+animation: heartbeat 1.2s infinite;
+
+
+}
+
+.final-text {
+margin-top: 20px;
+
+color: #ff4d6d;
+
+font-size: 15px;
+font-style: italic;
+
+
+}
+
+/* FLOATING HEARTS */
+
+.hearts {
+position: fixed;
+
+inset: 0;
+
+pointer-events: none;
+
+overflow: hidden;
+
+z-index: 1;
+
+
+}
+
+.hearts span {
+position: absolute;
+
+bottom: -50px;
+
+font-size: 22px;
+
+opacity: 0.6;
+
+animation: floatUp 8s linear infinite;
+
+
+}
+
+.hearts span:nth-child(1) {
+left: 10%;
+animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+left: 25%;
+animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+left: 45%;
+animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+left: 65%;
+animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+left: 80%;
+animation-delay: 3s;
+}
+
+.hearts span:nth-child(6) {
+left: 90%;
+animation-delay: 5s;
+}
+
+/* ANIMATIONS */
+
+@keyframes floatUp {
+
+0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+}
+
+20% {
+    opacity: 0.6;
+}
+
+100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+}
+
+
+}
+
+@keyframes heartbeat {
+
+0%, 100% {
+    transform: scale(1);
+}
+
+50% {
+    transform: scale(1.2);
+}
+
+
+}
+
+@keyframes cardIn {
+
+from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+.card {
+    padding: 28px 18px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.main-gif {
+    width: 210px;
+}
+
+button {
+    font-size: 16px;
+    padding: 12px 22px;
+}
+
+
+}
