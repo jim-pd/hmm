@@ -6,10 +6,6 @@ const result = document.getElementById("result");
 
 let yesScale = 1;
 
-/*
-WHEN "NO" IS CLICKED
-The YES button gets bigger.
-*/
 
 noButton.addEventListener("click", function () {
 
@@ -21,11 +17,6 @@ yesButton.style.transform =
 
 });
 
-/*
-WHEN "YES" IS CLICKED
-Hide the first screen
-and show the result.
-*/
 
 yesButton.addEventListener("click", function () {
 
